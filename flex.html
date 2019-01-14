@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        .flex-box{
+            display: -webkit-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            border: 1px solid #ccc;
+            height: 300px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            align-items: flex-start;
+            /*justify-content: flex-end;*/
+        }
+        .item {
+            /*width: 80px;*/
+            /*height: 80px;*/
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+
+        }
+        /*.item:nth-of-type(2n){align-self: flex-end}*/
+        .row{
+            flex-direction: row;/*column-reverse, column, row-reverse */
+        }
+        .row-reverse{
+            flex-direction: row-reverse;
+        }
+        .col{
+            flex-direction: column;
+        }
+        .col-reverse{
+            flex-direction: column-reverse;
+        }
+        .flow-nowrap{
+            flex-wrap: nowrap;
+        }
+        .flow-wrap{
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>1、弹性容器属性</dt>
+    <dd>1)flex-direction: <b>row</b> | row-reverse | column | column-reverse</dd>
+    <dd>2)flex-wrap: <b>nowrap</b> | wrap | wrap-reverse</dd>
+    <dd>3)flex-flow: flex-direction flex-wrap</dd>
+    <dd>4)justify-content: <b>flex-start</b> | flex-end | center | space-between | space-around</dd>
+    <dd>4)align-items : <b>flex-start</b> | flex-end | center | baseline | stretch</dd>
+    <dd>5)align-content: <b>flex-start</b> | flex-end | center | space-between | space-around | stretch
+    </dd>
+</dl>
+
+<dl>
+    <dt>2、弹性元素属性</dt>
+    <dd>1)order : 0</dd>
+    <dd>2)align-self: <b>auto</b> | flex-start | flex-end | center | baseline | stretch</dd>
+    <dd>3)flex-grow: 0</dd>
+    <dd>4)flex-shrink: 0</dd>
+    <dd>5)flex-basis: <b>auto</b> | width</dd>
+    <dd>6)flex: flex-grow flex-shrink flex-basis</dd>
+</dl>
+<p> flex-flow: row warp <=> flex-direction: row ;flex-wrap: wrap</p>
+<p> flex: 1 2 100px  <=> flex-grow: 1;flex-shrink:2;flex-basic: 100px</p>
+   <!-- <div class="row flex-box flow-nowrap">
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">1</div>
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">2</div>
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">3</div>
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">4</div>
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">5</div>
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">6</div>
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">7</div>
+        <div class="item" style="flex-grow: 1;flex-basis: 200px;height: 80px">8</div>
+    </div>
+    <div class="row-reverse flex-box">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="col flex-box flow-nowrap">
+        <div class="item">打发大水发打发打发打发打发打发点</div>
+        <div class="item">打发大水发打发打发打发打发打发点</div>
+        <div class="item">打发大水发打发打发打发打发打发点</div>
+    </div>
+    <div class="col-reverse flex-box flow-wrap">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>-->
+    <div class="flex-box flow-nowrap" style="position: fixed;bottom: 10px;left: 0;right: 0;align-items: stretch">
+        <div class="item aside" style="width: 200px"></div>
+        <div class="item content" style="flex: 1 1 auto"></div>
+    </div>
+</body>
+</html>
